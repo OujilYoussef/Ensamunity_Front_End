@@ -1,13 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { PostModel } from '../post-model';
-import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
-import { VotePayload } from './vote-payload';
-import { VoteType } from './vote-type';
-import { VoteService } from '../vote.service';
-import { AuthService } from 'src/app/auth/shared/auth.service';
-import { PostService } from '../post.service';
-import { throwError } from 'rxjs';
-import { ToastrService } from 'ngx-toastr';
+import {Component, Input, OnInit} from '@angular/core';
+import {PostModel} from '../post-model';
+import {faArrowDown, faArrowUp} from '@fortawesome/free-solid-svg-icons';
+import {VotePayload} from './vote-payload';
+import {VoteType} from './vote-type';
+import {VoteService} from '../vote.service';
+import {AuthService} from 'src/app/auth/shared/auth.service';
+import {PostService} from '../post.service';
+import {throwError} from 'rxjs';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-vote-button',
@@ -18,6 +18,7 @@ export class VoteButtonComponent implements OnInit {
 
   @Input() post: PostModel;
   votePayload: VotePayload;
+  voteType: VoteType;
   faArrowUp = faArrowUp;
   faArrowDown = faArrowDown;
   upvoteColor: string;
@@ -60,6 +61,7 @@ export class VoteButtonComponent implements OnInit {
       throwError(error);
     });
   }
+
 
   private updateVoteDetails() {
     this.postService.getPost(this.post.id).subscribe(post => {
