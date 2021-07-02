@@ -20,7 +20,7 @@ import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { discussionSideBarComponent } from './shared/discussion-side-bar/discussion-side-bar.component';
 import { CreatediscussionComponent } from './discussion/create-discussion/create-discussion.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
-import { ListdiscussionsComponent } from './discussion/list-discussions/list-discussions.component';
+import { ListDiscussionsComponent } from './discussion/list-discussions/list-discussions.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { ViewPostComponent } from './post/view-post/view-post.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -40,7 +40,7 @@ import { UserProfileComponent } from './auth/user-profile/user-profile.component
     discussionSideBarComponent,
     CreatediscussionComponent,
     CreatePostComponent,
-    ListdiscussionsComponent,
+    ListDiscussionsComponent,
     ViewPostComponent,
     UserProfileComponent
   ],

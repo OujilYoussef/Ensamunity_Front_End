@@ -8,7 +8,7 @@ import { throwError } from 'rxjs';
   templateUrl: './list-discussions.component.html',
   styleUrls: ['./list-discussions.component.css']
 })
-export class ListdiscussionsComponent implements OnInit {
+export class ListDiscussionsComponent implements OnInit {
 
   discussions: Array<DiscussionModel>;
   constructor(private discussionService: DiscussionService) { }
