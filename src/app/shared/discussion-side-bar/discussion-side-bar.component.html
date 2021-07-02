@@ -1,0 +1,11 @@
+<div class="sidebar-view-discussion">
+    <div style="color: black; font-weight: bold">Browse discussions</div>
+    <hr />
+    <span *ngFor="let discussion of discussions">
+        <span class="discussion-text"><a routerLink="/view-discussion/{{discussion.id}}">{{discussion.name}}</a></span>
+        <hr />
+    </span>
+    <div style="text-align: center" *ngIf="displayViewAll">
+        <a style="font-weight: bold" routerLink="/list-discussions">View All</a>
+    </div>
+</div>
