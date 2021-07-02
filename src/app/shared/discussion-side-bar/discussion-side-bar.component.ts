@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { discussionService } from 'src/app/discussion/discussion.service';
-import { discussionModel } from 'src/app/discussion/discussion-response';
+import { DiscussionService } from 'src/app/discussion/discussion.service';
+import { DiscussionModel } from 'src/app/discussion/discussion-response';
 
 @Component({
   selector: 'app-discussion-side-bar',
@@ -8,10 +8,10 @@ import { discussionModel } from 'src/app/discussion/discussion-response';
   styleUrls: ['./discussion-side-bar.component.css']
 })
 export class discussionSideBarComponent implements OnInit {
-  discussions: Array<discussionModel> = [];
+  discussions: Array<DiscussionModel> = [];
   displayViewAll: boolean;
 
-  constructor(private discussionService: discussionService) {
+  constructor(private discussionService: DiscussionService) {
     this.discussionService.getAlldiscussions().subscribe(data => {
       if (data.length > 3) {
         this.discussions = data.splice(0, 3);

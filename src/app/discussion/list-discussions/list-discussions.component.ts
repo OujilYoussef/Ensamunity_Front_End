@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { discussionModel } from '../discussion-response';
-import { discussionService } from '../discussion.service';
+import { DiscussionModel } from '../discussion-response';
+import { DiscussionService } from '../discussion.service';
 import { throwError } from 'rxjs';
 
 @Component({
@@ -10,8 +10,8 @@ import { throwError } from 'rxjs';
 })
 export class ListdiscussionsComponent implements OnInit {
 
-  discussions: Array<discussionModel>;
-  constructor(private discussionService: discussionService) { }
+  discussions: Array<DiscussionModel>;
+  constructor(private discussionService: DiscussionService) { }
 
   ngOnInit() {
     this.discussionService.getAlldiscussions().subscribe(data => {

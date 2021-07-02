@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { discussionModel } from 'src/app/discussion/discussion-response';
+import { DiscussionModel } from 'src/app/discussion/discussion-response';
 import { Router } from '@angular/router';
 import { PostService } from 'src/app/shared/post.service';
-import { discussionService } from 'src/app/discussion/discussion.service';
+import {DiscussionService} from 'src/app/discussion/discussion.service';
 import { throwError } from 'rxjs';
 import { CreatePostPayload } from './create-post.payload';
 
@@ -16,10 +16,9 @@ export class CreatePostComponent implements OnInit {
 
   createPostForm: FormGroup;
   postPayload: CreatePostPayload;
-  discussion: Array<discussionModel>;
+  discussions: Array<DiscussionModel>;
 
-  constructor(private router: Router, private postService: PostService,
-    private discussionService: discussionService) {
+  constructor(private router: Router, private postService: PostService, private discussionService: DiscussionService) {
     this.postPayload = {
       postName: '',
       url: '',
@@ -36,7 +35,7 @@ export class CreatePostComponent implements OnInit {
       description: new FormControl('', Validators.required),
     });
     this.discussionService.getAlldiscussions().subscribe((data) => {
-      this.discussion = data;
+      this.discussions = data;
     }, error => {
       throwError(error);
     });

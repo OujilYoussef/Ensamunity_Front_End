@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private postService: PostService,private activateRoute: ActivatedRoute,private rooter: Router) {
     this.discussionId = this.activateRoute.snapshot.params.id;
+    this.rooter.routeReuseStrategy.shouldReuseRoute = () => false;
     if(this.discussionId == null)
     {
     this.postService.getAllPosts().subscribe(post => {
@@ -26,14 +27,9 @@ export class HomeComponent implements OnInit {
       this.postService.getAllPostsByDiscussion(this.discussionId).subscribe(post => {
         this.posts = post;
       });
-     this.reloadCurrentRoute();
     }
   }
-  reloadCurrentRoute() {
-      this.rooter.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-      this.rooter.navigate([this.rooter.url]);
-    });
-  }
+
   ngOnInit(): void {
   }
 

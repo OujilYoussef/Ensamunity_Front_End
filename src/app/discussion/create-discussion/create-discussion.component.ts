@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { discussionModel } from '../discussion-response';
+import { DiscussionModel } from '../discussion-response';
 import { Router } from '@angular/router';
-import { discussionService } from '../discussion.service';
+import { DiscussionService } from '../discussion.service';
 import { throwError } from 'rxjs';
 
 @Component({
@@ -12,11 +12,11 @@ import { throwError } from 'rxjs';
 })
 export class CreatediscussionComponent implements OnInit {
   creatediscussionForm: FormGroup;
-  discussionModel: discussionModel;
+  discussionModel: DiscussionModel;
   title = new FormControl('');
   description = new FormControl('');
 
-  constructor(private router: Router, private discussionService: discussionService) {
+  constructor(private router: Router, private discussionService: DiscussionService) {
     this.creatediscussionForm = new FormGroup({
       title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required)
