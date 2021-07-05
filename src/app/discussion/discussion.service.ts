@@ -10,11 +10,11 @@ export class DiscussionService {
   constructor(private http: HttpClient) { }
 
   getAlldiscussions(): Observable<Array<DiscussionModel>> {
-    return this.http.get<Array<DiscussionModel>>('http://localhost:8080/api/Discussions');
+    return this.http.get<Array<DiscussionModel>>('http://localhost:8081/api/Discussions');
   }
 
   creatediscussion(discussionModel: DiscussionModel): Observable<DiscussionModel> {
-    return this.http.post<DiscussionModel>('http://localhost:8080/api/Discussions',
+    return this.http.post<DiscussionModel>('http://localhost:8081/api/Discussions',
       discussionModel);
   }
 }

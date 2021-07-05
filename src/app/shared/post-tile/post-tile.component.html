@@ -4,20 +4,20 @@
   <!-- Section to Display Post Information-->
   <div class="col-md-11">
     <span class="discussion-info">
-      <span class="discussion-text"><a class="posturl" routerLink="">{{post.discussionName}}</a></span>
+      <span class="discussion-text"><p>{{post.discussionName}}</p></span>
       <span> . Posted by <a class="username" routerLink="/user/{{post.userName}}">{{post.userName}}</a></span>
       <span> . {{post.duration}}</span>
     </span>
     <hr />
     <div class="post-title">
-      <a class="postname" href="{{post.url}}">{{post.postName}}</a>
+      <a class="postname" routerLink="/view-post/{{post.id}}">{{post.postName}}</a>
     </div>
     <div>
       <p class="post-text" [innerHtml]="post.description"></p>
     </div>
     <hr />
     <span>
-      <a class="btnCommments" role="button">
+      <a class="btnCommments"  routerLink="/view-post/{{post.id}}">
         <fa-icon [icon]="faComments"></fa-icon>
         Comments({{post.commentCount}})
       </a>

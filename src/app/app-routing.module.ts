@@ -13,6 +13,7 @@ import { AuthGuard } from './auth/auth.guard';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   {path:  'view-discussion/:id',component: HomeComponent},
+  {path:  'user/:name',component: HomeComponent},
   { path: 'view-post/:id', component: ViewPostComponent },
   { path: 'user-profile/:name', component: UserProfileComponent, canActivate: [AuthGuard] },
   { path: 'list-discussions', component: ListDiscussionsComponent },

@@ -7,19 +7,20 @@ header{
     width: 50px;
 }
 
-.reddit-text{        
+.reddit-text{
     font-weight: 700;
     height: 50px;
-    width: 50px;    
+    width: 50px;
+  color: white;
 }
 .logo{
     text-decoration: none;
 }
 
-.login, .sign-up{    
+.login, .sign-up{
     background-color: transparent;
     border-color: #0079D3;
-    color: #0079D3;
+    color: #ffffff;
     fill: #0079D3;
     border: 1px solid;
     border-radius: 4px;
@@ -33,24 +34,24 @@ header{
     line-height: 24px;
     text-transform: uppercase;
     padding: 3px 16px;
-    opacity: 1;  
+    opacity: 1;
 }
 
 .sign-up{
-    background-color: #0079D3;
-    border-color: #0079D3;
-    color: aliceblue;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #0079D3;
 }
 
 .sign-up:hover{
     opacity: 0.6;
 }
 
-.userdetails{    
+.userdetails{
     background-color: transparent;
     border-color: #0079D3;
-    color: #0079D3;
-    fill: #0079D3;
+    color: #ffffff;
+    fill: #ffffff;
     border: 1px solid;
     border-radius: 4px;
     box-sizing: border-box;
