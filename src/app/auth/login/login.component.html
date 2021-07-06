@@ -26,12 +26,12 @@
                                 </span>
                             </div>
                         </div>
-
-                        <span class="col-md-6 offset-md-4">
+<div class="col-md-6 offset-md-4">
+                        <span >
                             <button type="submit" class="login">
                                 Login
                             </button>
-                            <span style="padding-left: 15px">New User? <a routerLink="/signup">SIGN UP</a></span>
+                            <span style="padding-left: 15px">New User? <a routerLink="/sign-up">SIGN UP</a></span>
                         </span>
                         <span class="badge badge-danger" *ngIf='this.isError'>
                              <p class="login-failed-text">Login Failed. Please check your credentials and try again.</p>
@@ -39,6 +39,7 @@
                         <span class="badge badge-success"  *ngIf="this.registerSuccessMessage.length > 0">
                             {{registerSuccessMessage}}
                        </span>
+</div>
                     </form>
                 </div>
             </div>
